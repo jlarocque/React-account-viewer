@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3');
 const express = require('express')
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 const path = require('path');
 const dbPath = path.resolve(__dirname, '../db/accounts.db')
 
@@ -14,8 +14,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
 const app = express();
 
 app.use(bodyParser.json());
+app.use('/', express.static(path.join(__dirname, '/../client/dist')))
 
-app.get('/', function(req,res){
+app.get('/all', function(req,res){
   db.all('SELECT * FROM accounts', (err, data) =>{
     if (err) {
       console.log(err)

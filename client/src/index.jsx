@@ -27,7 +27,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<UserList users={this.state.data} />
+				<UserList users={this.state.data}/>
 			</div>
 		);
 	}

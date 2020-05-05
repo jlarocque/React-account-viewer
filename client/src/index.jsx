@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import UserList from "./components/UserList.jsx";
 
-class App extends Component {
+class App extends React.Component {
 	constructor(props) {
     super(props);
     this.state = {

@@ -1,5 +1,5 @@
 import React from "react";
-import DataCardFields from "./UserListElement";
+import UserListElement from "./UserListElement";
 
 var UserList = props => {
   return (
@@ -7,7 +7,7 @@ var UserList = props => {
       {props.users.map(user => {
         return (
           <div>
-            <DataCardFields user={user} id={user.id} />
+            <UserListElement user={user} id={user.id} />
           </div>
         );
       })}

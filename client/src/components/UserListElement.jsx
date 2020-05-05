@@ -4,13 +4,13 @@ import {FlippingCard, FlippingCardFront, FlippingCardBack} from 'react-ui-cards'
 export default function UserListElement(props) {
   return (
     <div>
-      <FlippingCard>
+      <FlippingCard className="card">
         <FlippingCardBack>
         <div>Employer: {props.user.employer}</div>
         <div>Email: {props.user.email}</div>
         <div>Phone: {props.user.phone}</div>
         <div>Address: {props.user.address}</div>
-        <div>Comments: {props.user.comments}</div>
+        <div>Comments: {props.user.comments.slice(0,100)}</div>
         <div>Created At: {props.user.created}</div>
         <div>Tags {props.user.tags}</div>
   	  </FlippingCardBack>
@@ -20,6 +20,7 @@ export default function UserListElement(props) {
         <div>Id: {props.user.id}</div>
         <div>Balance: {props.user.balance}</div>
         <div>Credit Score: {props.user.credit}</div>
+        <div>{props.user.credit >= 600 ? 'APPROVED' : 'DENIED'}</div>
   	  </FlippingCardFront>
   </FlippingCard>
     </div>

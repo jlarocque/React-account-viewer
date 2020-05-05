@@ -1,0 +1,9 @@
+.user-list {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-style: ridge;
+}
